@@ -1,3 +1,7 @@
+> This guide is still under development. We'll be overhauling the Introduction to Python content in the next few months. Stay tuned for more changes and better tutorials!
+> 
+> ~ *The Return STEM team*
+
 # Storing Information
 
 * Information is all around you, represented in different ways:

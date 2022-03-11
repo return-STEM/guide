@@ -1,3 +1,8 @@
+> This guide is still under development. We'll be overhauling the Introduction to Python content in the next few months. Stay tuned for more changes and better tutorials!
+> 
+> ~ *The Return STEM team*
+
+
 # The Console
 
 A location where the user can input commands (by typing into it) and view outputs

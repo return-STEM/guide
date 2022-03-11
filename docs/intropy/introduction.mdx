@@ -1,3 +1,7 @@
+> This guide is still under development. We'll be overhauling the Introduction to Python content in the next few months. Stay tuned for more changes and better tutorials!
+> 
+> ~ *The Return STEM team*
+
 # What is programming?
 
 Like all languages, a programming language communicates something (in this case, to the computer).
