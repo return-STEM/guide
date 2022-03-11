@@ -1,0 +1,19 @@
+{
+  "courses": [
+    {
+      "href": "intropy",
+      "difficulty": "Beginner",
+      "name": "Introduction to Python"
+    },
+    {
+      "href": "introcpp",
+      "difficulty": "Beginner",
+      "name": "Introduction to C++"
+    },
+    {
+      "href": "applipy",
+      "difficulty": "Intermediate",
+      "name": "Applications of Python"
+    }
+  ]
+}

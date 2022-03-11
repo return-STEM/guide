@@ -1,0 +1,40 @@
+@font-face {
+    font-family: "Ubuntu Light";
+    src: url("/fonts/Ubuntu/Ubuntu-Light.ttf");
+}
+
+@font-face {
+    font-family: "Inter Bold";
+    src: url("/fonts/Inter/Inter-Bold.ttf");
+}
+
+@font-face {
+    font-family: "Inter Regular";
+    src: url("/fonts/Inter/Inter-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Inter Medium";
+    src: url("/fonts/Inter/Inter-Medium.ttf");
+}
+
+@font-face {
+    font-family: "Quicksand Regular";
+    src: url("/fonts/Quicksand/Quicksand-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Jetbrains Mono";
+    src: url("/fonts/JetBrains_Mono/JetBrainsMono-Thin.ttf");
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    font-size: 10px;
+}
+
+a, a:hover, a:focus, a:active {
+    text-decoration: none;
+    color: inherit;
+}

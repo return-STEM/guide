@@ -1,0 +1,46 @@
+{
+  "lessons": [
+    {
+      "name": "Introduction",
+      "href": "introduction"
+    },
+    {
+      "name": "Variables and Data Types",
+      "href": "variables"
+    },
+    {
+      "name": "Console I/O",
+      "href": "consoleio"
+    },
+    {
+      "name": "Arithmetic Operations",
+      "href": "arithmetic"
+    },
+    {
+      "name": "Control Structures: Conditionals",
+      "href": "conditionals"
+    },
+    {
+      "name": "Control Structures: Loops",
+      "href": "loops"
+    },
+    {
+      "name": "Lists",
+      "href": "lists"
+    }
+  ],
+  "wipLessons": [
+    {
+      "name": "Functions",
+      "href": "functions"
+    },
+    {
+      "name": "C++ Standard Library (STL)",
+      "href": "cppstandardlibrary"
+    },
+    {
+      "name": "Debugging",
+      "href": "debugging"
+    }
+  ]
+}

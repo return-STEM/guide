@@ -1,0 +1,212 @@
+@use "../base/variables.scss"
+@use "sass:color"
+.markdown
+  h1, h2, h3, h4, h5, h6
+    font-family: "Inter Bold", sans-serif
+
+  h1
+    font-size: 2em
+
+  h2
+    font-size: 1.75em
+
+  p
+    font-size: 1.1em
+    line-height: 1.3em
+
+  // This is to prevent the font size from recursively getting larger with nested lists
+  >  ul > li
+    font-size: 1.1em
+    line-height: 1.3em
+
+  li
+    font-size: 1em
+    line-height: 1.3em
+
+  pre
+    padding: 10px 14px
+    background-color: color.scale(variables.$white, $blackness: 9%)
+    border-radius: 6px
+  code
+    font-family: monospace
+  img
+    max-width: 45em
+    max-height: 30em
+
+  blockquote
+    background-color: color.scale(variables.$blue, $lightness: 70%)
+    margin: 1em 0
+    padding: 0.5em 0 0.5em 1.5em
+    border-radius: 6px
+    border-left: 1em  solid color.scale(variables.$navy, $lightness: 70%)
+    p
+      padding: 0.2em 0
+      margin: 0
+
+
+  font-family: "Inter Regular", sans-serif
+
+  table, tr, td, th
+    border-collapse: collapse
+    border: 1px solid  color.scale(variables.$white, $blackness: 15%)
+    padding: 0.5em
+    text-align: left
+
+  th
+    background-color: variables.$blue
+    color: variables.$white
+    text-align: left
+
+  tr:nth-child(odd)
+    background-color: color.scale(variables.$white, $blackness: 10%)
+
+  tr:nth-child(even)
+    background-color: color.scale(variables.$white, $blackness: 5%)
+
+
+.nav
+  flex-basis: 1
+  height: 100vh
+  position: sticky
+  top: 0
+  max-width: 30em
+  color: variables.$white
+  background-color: variables.$blue
+
+  &-lesson-list
+    height: calc(100vh - 15em - 20px)
+    overflow-y: scroll
+    overflow-x: overlay
+    &::-webkit-scrollbar
+      overflow: auto
+      width: 10px
+      background: transparent
+
+    &::-webkit-scrollbar-track
+      width: 6px
+
+
+    &::-webkit-scrollbar-thumb
+      background: variables.$blue
+      border-radius: 5px
+      width: 6px
+
+      &:hover
+        background: variables.$navy
+
+
+  &-org-banner
+    height: 4em
+    background-color: transparentize(black, 0.6)
+    border-bottom: 3px solid white
+    display: flex
+    align-items: center
+    &:hover
+      //& > h1
+        //text-decoration: underline
+      cursor: pointer
+
+
+    & > img
+      height: 2.5em
+      padding: 0.75em 0.75em 0.75em 30px
+      float: left
+      @media screen and (max-width: 1400px)
+        height: 2em
+
+    & > h1
+      font-family: "Jetbrains Mono", monospace
+      color: white
+      font-size: 2em
+      padding: 0.5em 0
+      margin: 0
+      display: inline-block
+
+      @media screen and (max-width: 1400px)
+        font-size: 1.5em
+
+  &-title
+    > h1
+      padding: 20px 30px 10px 30px
+      margin: 0
+      font-family: "Inter Bold", sans-serif
+      font-size: 2.5em
+      &:hover
+        cursor: pointer
+        text-decoration: underline
+    height: 15em
+    background-color: transparentize(black, 0.6)
+    background-blend-mode: multiply
+    background-position: center
+    background-size: cover
+
+
+
+
+  &-lesson
+    font-size: 1em
+    font-family: "Inter Bold", sans-serif
+    padding: 10px 10px 10px 30px
+    cursor: pointer
+
+    &:hover
+      background-color: color.scale(variables.$blue, $lightness: -10%)
+      text-decoration: underline
+
+    &-active
+      @extend .nav-lesson
+      background-color: lighten(variables.$navy, 0.5)
+      &:hover
+        background-color: color.scale(variables.$navy, $lightness: -10%)
+
+
+    &-header-list
+      background-color: color.scale(variables.$navy, $lightness: 20%)
+      div
+        @extend .nav-lesson
+        font-family: "Inter Medium", sans-serif
+        font-size: 0.9em
+        padding: 10px 10px 10px 50px
+
+        &:hover
+          background-color: color.scale(variables.$navy, $lightness: 10%)
+        p
+          padding: 0
+          margin: 0
+        code
+          font-family: "JetBrains Mono Bold", monospace
+
+
+
+
+
+
+.md-container
+  width: 100%
+  max-width: 50em
+  background-color: variables.$white
+  padding-left: 8em
+
+  & > h1
+    font-family: "Inter Bold", sans-serif
+    font-size: 3em
+
+.topbar
+  position: sticky
+
+  &-container
+    width: 100%
+
+.content-container
+  display: flex
+  justify-content: left
+  flex-basis: 6
+  width: 100%
+  padding: 0 14px
+
+
+.documentation-container
+  display: flex
+  flex-basis: 1
+  flex-direction: row
+  font-size: 1.7rem
