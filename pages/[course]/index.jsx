@@ -23,7 +23,7 @@ export async function getStaticProps({ params }) {
     const courses = JSON.parse(await fs.readFile(dir, 'utf8'));
     const courseData = courses.courses.find(elem => elem.href == params.course);
 
-    let walkthroughDataPath = `${process.cwd()}/public/guide/${courseData.href}/metadata.json`
+    let walkthroughDataPath = `${process.cwd()}/public/${courseData.href}/metadata.json`
 
     let walkthroughData = JSON.parse(await fs.readFile(walkthroughDataPath, 'utf8'));
 

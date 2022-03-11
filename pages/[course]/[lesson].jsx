@@ -36,7 +36,7 @@ export async function getStaticPaths() {
 
     for (const c of courses.courses) {
 
-        let walkthroughDataPath = `${process.cwd()}/public/guide/${c.href}/metadata.json`
+        let walkthroughDataPath = `${process.cwd()}/public/${c.href}/metadata.json`
         let walkthroughData = JSON.parse(await fs.readFile(walkthroughDataPath, 'utf8'));
         for (const l of walkthroughData.lessons) {
             paths.push(
@@ -55,12 +55,12 @@ export async function getStaticProps({params}) {
     const courses = JSON.parse(await fs.readFile(dir, 'utf8'));
     const courseData = courses.courses.find(elem => elem.href === params.course);
 
-    let walkthroughDataPath = `${process.cwd()}/public/guide/${courseData.href}/metadata.json`
+    let walkthroughDataPath = `${process.cwd()}/public/${courseData.href}/metadata.json`
     let walkthroughData = JSON.parse(await fs.readFile(walkthroughDataPath, 'utf8'));
 
     let lessonData = walkthroughData.lessons.find(elem => elem.href === params.lesson)
 
-    let mdContent = await fs.readFile(`${process.cwd()}/public/guide/${courseData.href}/${lessonData.href}.mdx`)
+    let mdContent = await fs.readFile(`${process.cwd()}/public/${courseData.href}/${lessonData.href}.mdx`)
     let headings = await getHeadingTreeMd(mdContent.toString())
     mdContent = await serialize(mdContent, options)
 
