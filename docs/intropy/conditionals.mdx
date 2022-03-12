@@ -14,7 +14,7 @@
 To solve our problem, we have decided to use  __if/else statements__ . But how exactly do these  __if/else statements__  work?
 
 # If/Else structure
-![](python-4-if.png)
+![](conditionals/python-4-if.png)
 # Syntax
 The if statement is structured like this:
 ```python

@@ -26,7 +26,7 @@ export default function MobileNavBar(props) {
             </div>
             <div className={styles["cur-lesson-view"]}>
                 <Link href={`/${props.courseData.href}`}>
-                    <span class={styles["course-name"]}>
+                    <span className={styles["course-name"]}>
                         {props.courseData.name}
                     </span>
                 </Link>
