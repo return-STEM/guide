@@ -13,7 +13,6 @@
 * Computers do this too.
 * In this lesson, you will learn how to store information, called  **variables.**
 
-
 # Creating a Variable
 
 Variables are one way Python stores information.

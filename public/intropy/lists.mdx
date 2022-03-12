@@ -220,13 +220,6 @@ Output:
 
 ```
 
-### Examples
-| Using for i in range(len(list)): | Using for i in list: | Output: |
-| :-: | :-: | :-: |
-| letters = [‘a’, ‘b’, ‘c’, ‘d’]<br />for i in range(len(my_list)):	print(my_list[i]) |  letters = [‘a’, ‘b’, ‘c’, ‘d’]<br /> for i in letters:   print(i) | >>> a<br />>>> b<br />>>> c<br />>>> d |
-|  nums = [0, 1, 2, 3, 4]<br /> evens = 0<br /> for i in range(len(nums)):   if (nums[i] % 2 == 0):      evens += 1<br /> print(evens) |  nums = [0, 1, 2, 3, 4]<br /> evens = 0<br /> for i in nums:   if (i % 2 == 0):      evens += 1<br /> print(evens) | >>> 3 |
-|  sum = 0<br /> vals = [98, 70, 100, 90]<br /> for i in range(len(vals)):   sum += vals[i]<br /> print(vals) |  sum = 0<br /> vals = [98, 70, 100, 90]<br /> for i in vals:    sum += i<br /> print(sum) | >>> 358 |
-
 ## .append()
 
 To add an element to the end of the list, you can use` .append()`Just like `.pop()`, use it after the name of the list, with the value you want to append.

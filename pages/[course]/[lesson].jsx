@@ -15,6 +15,8 @@ import remarkMath from 'remark-math'
 import rehypeSlug from 'rehype-slug';
 import rehypePrism from '@mapbox/rehype-prism'
 import rehypeKatex from 'rehype-katex'
+import MobileNavBar from "../../components/MobileNavBar";
+import MobileNavEscape from "../../components/MobileNavEscape";
 
 const options = {
     mdxOptions: {
@@ -71,26 +73,31 @@ export async function getStaticProps({params}) {
 
 export default function Lesson({courseData, walkthroughData, lessonData, mdContent, headings}) {
     return (
+
         <div className={styles["documentation-container"]}>
 
-            <div>
-                <CourseNavMenu courseData={courseData}
-                    walkthroughData={walkthroughData}
-                    lessonData={lessonData}
-                    headings={headings}
-                />
-            </div>
-            <div className={styles["topbar-container"]}>
-                <div className={styles["content-container"]}>
+            <MobileNavBar
+                courseData={courseData}
+                walkthroughData={walkthroughData}
+                lessonData={lessonData}
+                headings={headings}
+            />
+            <MobileNavEscape/>
+            <CourseNavMenu courseData={courseData}
+                           walkthroughData={walkthroughData}
+                           lessonData={lessonData}
+                           headings={headings}
 
-                    <div className={styles["md-container"]}>
-                        <h1>{lessonData.name} </h1>
-                        <div className={styles.markdown}>
-                            <MDXRemote {...mdContent}></MDXRemote>
-                        </div>
+            />
+            <div className={styles["content-container"]}>
+                <div className={styles["md-container"]}>
+                    <h1>{lessonData.name} </h1>
+                    <div className={styles.markdown}>
+                        <MDXRemote {...mdContent}></MDXRemote>
                     </div>
                 </div>
             </div>
         </div>
+
     )
 }

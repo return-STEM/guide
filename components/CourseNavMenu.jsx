@@ -3,8 +3,9 @@ import styles from "../styles/pages/guide.module.sass"
 import {MDXRemote} from "next-mdx-remote";
 
 export default function CourseNavMenu(props) {
+
     return (
-        <div className={styles["nav"]}>
+        <div className={styles["nav"]} id={"course-nav-menu"}>
 
             <Link href={`/${props.courseData.href}`}>
                 <div
@@ -22,11 +23,9 @@ export default function CourseNavMenu(props) {
                 </div>
 
             </Link>
-            <div style={{paddingTop: "20px"}}/>
             <div className={styles["nav-lesson-list"]}>
-
+                <div style={{paddingTop: "20px"}}/>
                 <div>
-
                 {
                     props.walkthroughData.lessons.map((lesson) => {
                         return (

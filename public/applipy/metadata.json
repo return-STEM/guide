@@ -1,4 +1,8 @@
 {
   "lessons": [
+    {
+      "name": "Introduction to Python Review",
+      "href": "review"
+    }
   ]
 }

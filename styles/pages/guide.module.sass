@@ -1,8 +1,26 @@
 @use "../base/variables.scss"
 @use "sass:color"
+
+$breakpoint-medium-screen: 1366px
+$breakpoint-small-screen: 1100px
+$breakpoint-very-small-screen: 900px
+$breakpoint-phone: 550px
+
 .markdown
   h1, h2, h3, h4, h5, h6
     font-family: "Inter Bold", sans-serif
+
+  a
+    text-decoration: underline
+    &:link
+      color: color.scale(variables.$blue, $blackness: 20%)
+    &:visited
+      color: color.scale(variables.$navy, $blackness: 30%)
+    &:hover
+      color: color.scale(variables.$blue, $lightness: 10%)
+    &:active
+      color: color.scale(variables.$blue, $lightness: 20%)
+
 
   h1
     font-size: 2em
@@ -27,6 +45,11 @@
     padding: 10px 14px
     background-color: color.scale(variables.$white, $blackness: 9%)
     border-radius: 6px
+    white-space: pre-wrap
+    word-wrap: break-word
+    text-align: justify
+
+
   code
     font-family: monospace
   img
@@ -65,34 +88,36 @@
 
 
 .nav
-  flex-basis: 1
+  flex-shrink: 2
+  flex-grow: 1
   height: 100vh
   position: sticky
+
   top: 0
-  max-width: 30em
+  max-width: 24em
   color: variables.$white
   background-color: variables.$blue
 
+
   &-lesson-list
-    height: calc(100vh - 15em - 20px)
-    overflow-y: scroll
-    overflow-x: overlay
+    height: calc(100vh - 15em )
+    overflow: overlay
     &::-webkit-scrollbar
       overflow: auto
-      width: 10px
       background: transparent
+      width: 10px
 
     &::-webkit-scrollbar-track
-      width: 6px
+      width: 10px
 
 
     &::-webkit-scrollbar-thumb
-      background: variables.$blue
+      background: transparentize(variables.$latte, 0.2)
+      background-clip: content-box
       border-radius: 5px
+      border: 3px solid transparent
       width: 6px
 
-      &:hover
-        background: variables.$navy
 
 
   &-org-banner
@@ -109,21 +134,18 @@
 
     & > img
       height: 2.5em
-      padding: 0.75em 0.75em 0.75em 30px
+      padding: 0.75em 0.75em 0.75em 15px
       float: left
-      @media screen and (max-width: 1400px)
-        height: 2em
 
     & > h1
       font-family: "Jetbrains Mono", monospace
+      white-space: nowrap
       color: white
       font-size: 2em
       padding: 0.5em 0
       margin: 0
       display: inline-block
 
-      @media screen and (max-width: 1400px)
-        font-size: 1.5em
 
   &-title
     > h1
@@ -178,11 +200,8 @@
 
 
 
-
-
-
 .md-container
-  width: 100%
+  width: 80%
   max-width: 50em
   background-color: variables.$white
   padding-left: 8em
@@ -191,22 +210,127 @@
     font-family: "Inter Bold", sans-serif
     font-size: 3em
 
-.topbar
-  position: sticky
-
-  &-container
-    width: 100%
 
 .content-container
   display: flex
   justify-content: left
-  flex-basis: 6
   width: 100%
-  padding: 0 14px
-
 
 .documentation-container
+  width: 100%
   display: flex
-  flex-basis: 1
+  flex-shrink: 1
   flex-direction: row
   font-size: 1.7rem
+
+@media screen and (max-width: $breakpoint-medium-screen)
+  .nav-org-banner > img
+    height: 2em
+  .nav-org-banner > h1
+    font-size: 1.5em
+  .md-container
+    padding-left: 4em
+    width: calc(90% - 3em)
+
+.nav-bar-mobile
+  font-family: "Inter Bold", sans-serif
+  display: none
+  position: sticky
+  top: 0
+
+  height: 3.5em
+  width: 100vw
+  .cur-lesson-view
+    .course-name
+      cursor: pointer
+      &:hover
+        text-decoration: underline
+    padding-left: 1em
+    display: inline-flex
+    flex-basis: 0
+    align-items: center
+    span
+      font-size: 1.2em
+      white-space: nowrap
+      line-height: 1
+    svg
+      height: 1em
+      width: 1em
+      padding: 0 2px
+
+  color: variables.$white
+
+  background-color: transparentize(black, 0.5)
+  background-blend-mode: multiply
+  background-position: center
+  background-size: cover
+
+  align-items: center
+  .mobile-menu-button
+    flex-shrink: 0
+    background-color: transparentize(black, 0.6)
+    width: 3.5em
+    height: 3.5em
+
+    svg
+      height: 1.5em
+      padding:  1em 1em
+      width: 1.5em
+
+  img
+    margin-right: 1em
+    flex-shrink: 0
+    margin-left: auto
+    height: 2.5em
+    padding:  0.5em 0.5em
+    width: 2.5em
+    cursor: pointer
+
+.nav-escape
+  display: none
+  height: calc(100% - 3.5em)
+  width: calc(100% - 17em)
+  position: fixed
+  top: 3.5em
+  left: 19em
+
+@media screen and (max-width: $breakpoint-small-screen)
+  .nav
+    width: 19em
+
+  .content-container
+    width: calc(100% - 19em)
+
+  .md-container
+    padding-left: 1em
+    width: 90%
+
+@media screen and (max-width: $breakpoint-very-small-screen)
+  .content-container
+    width: 100%
+  .md-container
+    width: calc(100% - 2em)
+    padding-left: 1em
+    padding-right: 1em
+  .nav
+    display: none
+    position: fixed
+    top: 3.5em
+    left: 0
+    z-index: 2
+    &-lesson-list
+      height: calc(100% - 3.5em)
+    &-title
+      display: none
+  .nav-bar-mobile
+    display: flex
+  .documentation-container
+    width: 100%
+    display: block
+
+@media screen and (max-width: $breakpoint-phone)
+  .cur-lesson-view
+    span:not(:last-child)
+      display: none
+    svg
+      display: none

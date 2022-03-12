@@ -161,7 +161,7 @@ Operator | C++ Syntax | Behavior
 -----|-----|-----
 NOT | `!` | Inverts the condition
 AND | `&&` | `true` only if **both** sides are true
-OR | `||` | `true` if **either** side is true
+OR | <code>\|\|</code> | `true` if **either** side is true
 
 The NOT operator is the simplest: it simply inverts a single boolean condition, turning `true` into `false` and vice versa. AND and OR operate on two boolean conditions, becoming true when **both are true** (AND) or when **either are true** (OR). Here are some examples:
 
@@ -169,7 +169,7 @@ The NOT operator is the simplest: it simply inverts a single boolean condition, 
 | ---|---|---|
 | `!(3 < 5)` | `false` |  `3 < 5` evaluates to `true` and is inverted by NOT, so we get `false`.
 | `10 < 20 && 20 > 40` | `false` | `10 < 20` is `true`, but `20 > 40` is `false`. Both need to be `true` for an AND operator to evaluate to `true`, so this expression evaluates to `false`.
-| `15 < 20 \|\| 20 == 40` | `true` | `10 < 20` is `true` and `20 == 40` is `false`. Only one boolean condition needs to be true for an OR operator to evaluate to `true`, so this expression evaluates to `true`.
+| <code>15 < 20 \|\| 20 == 40 </code> | `true` | `10 < 20` is `true` and `20 == 40` is `false`. Only one boolean condition needs to be true for an OR operator to evaluate to `true`, so this expression evaluates to `true`.
 
 These can be used inside `if` and `else if` clauses just like we'd normally use a condition. This is helpful if we want to check a single variable for multiple conditions, or check multiple variables. Consider this example, where we use the `&&` operator to determine whether a number is between 5 and 20, exclusive:
 ```cpp
