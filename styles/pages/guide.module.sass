@@ -49,11 +49,10 @@ $breakpoint-phone: 550px
     word-wrap: break-word
     text-align: justify
 
-
   code
     font-family: monospace
   img
-    max-width: 45em
+    max-width: min(45em, 100%)
     max-height: 30em
 
   blockquote
@@ -334,3 +333,19 @@ $breakpoint-phone: 550px
       display: none
     svg
       display: none
+
+.responsive-table
+  overflow: overlay
+  &::-webkit-scrollbar
+    overflow: auto
+    background: transparent
+    height: 10px
+
+  &::-webkit-scrollbar-track
+    height: 10px
+
+  &::-webkit-scrollbar-thumb
+    background: transparentize(black, 0.9)
+    background-clip: content-box
+    border-radius: 5px
+    border: 3px solid transparent

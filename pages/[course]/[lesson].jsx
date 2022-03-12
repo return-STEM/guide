@@ -15,8 +15,10 @@ import remarkMath from 'remark-math'
 import rehypeSlug from 'rehype-slug';
 import rehypePrism from '@mapbox/rehype-prism'
 import rehypeKatex from 'rehype-katex'
+
 import MobileNavBar from "../../components/MobileNavBar";
 import MobileNavEscape from "../../components/MobileNavEscape";
+import ResponsiveTable from "../../components/ResponsiveTable"
 
 const options = {
     mdxOptions: {
@@ -31,6 +33,9 @@ const options = {
     },
 };
 
+const components = {
+    table: ResponsiveTable
+}
 export async function getStaticPaths() {
     const dir = path.join(process.cwd(), 'data/courses.json');
     const courses = JSON.parse(await fs.readFile(dir, 'utf8'));
@@ -76,8 +81,9 @@ export default function Lesson({courseData, walkthroughData, lessonData, mdConte
 
         <div className={styles["documentation-container"]}>
             <Head>
-                <meta name={"viewport"} content={"width=device-width, initial-scale=1.0"}/>
-            </Head>
+                <meta name={"viewport"}
+                      content={"height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, target-densitydpi=device-dpi"}/>
+            < /Head>
 
             <MobileNavBar
                 courseData={courseData}
@@ -96,7 +102,7 @@ export default function Lesson({courseData, walkthroughData, lessonData, mdConte
                 <div className={styles["md-container"]}>
                     <h1>{lessonData.name} </h1>
                     <div className={styles.markdown}>
-                        <MDXRemote {...mdContent}></MDXRemote>
+                        <MDXRemote {...mdContent} components={components}/>
                     </div>
                 </div>
             </div>
