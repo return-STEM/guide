@@ -290,7 +290,7 @@ I can also tell him to read it and come to me (in room 104) whenever he wants to
 > However, if he decides to go to some other classroom (room 105), my essay would not be changed because I would not know what to change (he told someone else, and not me)
 
 
-![](functions-8.png)
+![](functions/functions-8.png)
 # Using Functions in your Code
 Aside from very simple programs with few lines, it is almost always useful to use functions in your program. Functions should be made to do specific tasks that can be reusable, and should be named accordingly with appropriate names.
 
