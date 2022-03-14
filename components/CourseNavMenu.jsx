@@ -1,17 +1,18 @@
 import Link from "next/link"
 import styles from "../styles/pages/guide.module.sass"
 import {MDXRemote} from "next-mdx-remote";
+import {COURSES_ROOT} from "../lib/mainsitemap";
 
 export default function CourseNavMenu(props) {
 
     return (
         <div className={styles["nav"]} id={"course-nav-menu"}>
 
-            <Link href={`/${props.courseData.href}`}>
+            <Link href={`${COURSES_ROOT}/${props.courseData.href}`}>
                 <div
                     className={styles["nav-title"]}
                     style={{backgroundImage: `url(/img/thumbnails/${props.courseData.href}.svg)`}}>
-                    <Link href={"/"}>
+                    <Link href={`${COURSES_ROOT}`}>
 
                         <div className={styles["nav-org-banner"]}>
                             <img src="/img/Logo.svg" alt="logo"/>

@@ -20,6 +20,9 @@ import MobileNavBar from "../../components/MobileNavBar";
 import MobileNavEscape from "../../components/MobileNavEscape";
 import ResponsiveTable from "../../components/ResponsiveTable"
 
+
+import {COURSES_ROOT} from "../../lib/mainsitemap";
+
 const options = {
     mdxOptions: {
         remarkPlugins: [

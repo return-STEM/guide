@@ -3,6 +3,7 @@ import styles from "../styles/pages/guide.module.sass"
 import { faBars } from '@fortawesome/free-solid-svg-icons'
 import {faAngleRight} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {COURSES_ROOT} from "../lib/mainsitemap";
 
 
 export default function MobileNavBar(props) {
@@ -25,7 +26,7 @@ export default function MobileNavBar(props) {
                 <FontAwesomeIcon icon={faBars}/>
             </div>
             <div className={styles["cur-lesson-view"]}>
-                <Link href={`/${props.courseData.href}`}>
+                <Link href={`${COURSES_ROOT}/${props.courseData.href}`}>
                     <span className={styles["course-name"]}>
                         {props.courseData.name}
                     </span>
@@ -36,7 +37,7 @@ export default function MobileNavBar(props) {
                 </span>
 
             </div>
-            <Link href={"/"}>
+            <Link href={`${COURSES_ROOT}`}>
                 <img src="/img/Logo.svg" alt="logo"/>
             </Link>
 
