@@ -1,3 +1,8 @@
+---
+slides: "https://docs.google.com/presentation/d/175SGI6EUgChdZKX-jpkwz1uUBKjvA_q7E_F3XPOdBI4"
+---
+
+
 > This guide is still under development. We'll be overhauling the Introduction to Python content in the next few months. Stay tuned for more changes and better tutorials!
 > 
 > ~ *The Return STEM team*

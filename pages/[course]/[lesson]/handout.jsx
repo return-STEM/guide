@@ -76,7 +76,6 @@ export async function getStaticProps({params}) {
     let headings = await getHeadingTreeMd(mdContent.toString())
 
     mdContent = await serialize(mdContent, options)
-    console.log(frontMatter)
     frontMatter = frontMatter.data
 
     return {
