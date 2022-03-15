@@ -8,23 +8,25 @@ import dynamic from "next/dynamic"
 import {MDXRemote} from "next-mdx-remote"
 import {serialize} from "next-mdx-remote/serialize";
 import matter from "gray-matter";
-import styles from "../../styles/pages/guide.module.sass"
-import CourseNavMenu from "../../components/CourseNavMenu";
-import {getHeadingTreeMd} from "../../lib/mdxutils"
+import styles from "../../../styles/pages/guide.module.sass"
+import CourseNavMenu from "../../../components/CourseNavMenu";
+import {getHeadingTreeMd} from "../../../lib/mdxutils"
 
 import remarkMath from 'remark-math'
 import rehypeSlug from 'rehype-slug';
 import rehypePrism from '@mapbox/rehype-prism'
 import rehypeKatex from 'rehype-katex'
 
-import MobileNavBar from "../../components/MobileNavBar";
-import MobileNavEscape from "../../components/MobileNavEscape";
-import ResponsiveTable from "../../components/ResponsiveTable"
+import MobileNavBar from "../../../components/MobileNavBar";
+import MobileNavEscape from "../../../components/MobileNavEscape";
+import ResponsiveTable from "../../../components/ResponsiveTable"
 
 
-import {COURSES_ROOT} from "../../lib/mainsitemap";
+import {COURSES_ROOT} from "../../../lib/mainsitemap";
 
 const options = {
+
+    parseFrontmatter: true,
     mdxOptions: {
         remarkPlugins: [
             remarkMath // Math parsing
@@ -34,12 +36,10 @@ const options = {
             rehypePrism, // syntax highlighting
             rehypeKatex //LaTeX support
         ],
-    },
+    }
 };
 
-const components = {
-    table: ResponsiveTable
-}
+
 export async function getStaticPaths() {
     const dir = path.join(process.cwd(), 'data/courses.json');
     const courses = JSON.parse(await fs.readFile(dir, 'utf8'));
@@ -60,6 +60,7 @@ export async function getStaticPaths() {
     return {paths, fallback: false}
 }
 
+
 export async function getStaticProps({params}) {
     const dir = path.join(process.cwd(), 'data/courses.json');
     const courses = JSON.parse(await fs.readFile(dir, 'utf8'));
@@ -71,19 +72,22 @@ export async function getStaticProps({params}) {
     let lessonData = walkthroughData.lessons.find(elem => elem.href === params.lesson)
 
     let mdContent = await fs.readFile(`${process.cwd()}/public/${courseData.href}/${lessonData.href}.mdx`)
-    mdContent = matter(mdContent).content
+    let frontMatter = matter(mdContent)
     let headings = await getHeadingTreeMd(mdContent.toString())
+
     mdContent = await serialize(mdContent, options)
+    console.log(frontMatter)
+    frontMatter = frontMatter.data
 
     return {
-        props: {courseData, walkthroughData, lessonData, mdContent, headings}
+        props: {courseData, walkthroughData, lessonData, mdContent, headings, frontMatter}
     }
 }
 
-export default function Lesson({courseData, walkthroughData, lessonData, mdContent, headings}) {
+export default function Slides({courseData, walkthroughData, lessonData, mdContent, headings, frontMatter}) {
     return (
 
-        <div className={styles["documentation-container"]}>
+        <div className={styles["embed-container"]}>
             <Head>
                 <meta name={"viewport"}
                       content={"height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, target-densitydpi=device-dpi"}/>
@@ -103,12 +107,15 @@ export default function Lesson({courseData, walkthroughData, lessonData, mdConte
 
             />
             <div className={styles["content-container"]}>
-                <div className={styles["md-container"]}>
-                    <h1>{lessonData.name} </h1>
-                    <div className={styles.markdown}>
-                        <MDXRemote {...mdContent} components={components}/>
-                    </div>
-                </div>
+                {
+                    (frontMatter?.slides) ?
+                        <iframe src={`${frontMatter?.slides}/embed`} frameBorder={0} allowFullScreen={true} className={styles["embed-slides"]}/>
+
+                        :
+                        <div className={styles["md-container"]}>
+                            <h1>There are no slides for this lesson.</h1>
+                        </div>
+                }
             </div>
         </div>
 
