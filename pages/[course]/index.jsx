@@ -37,7 +37,7 @@ export default function CourseIndex({courseData}) {
                 <meta name={"viewport"}
                       content={"height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, target-densitydpi=device-dpi"}/>
                 <meta httpEquiv={"refresh"} content={`0;URL='${COURSES_ROOT}/${courseData.href}'`}/>
-            < /Head>
+            </Head>
         </div>
     )
 }

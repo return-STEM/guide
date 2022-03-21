@@ -87,7 +87,10 @@ export default function Lesson({courseData, walkthroughData, lessonData, mdConte
             <Head>
                 <meta name={"viewport"}
                       content={"height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, target-densitydpi=device-dpi"}/>
-            < /Head>
+                <link rel="shortcut icon" href="/img/Logo.svg" />
+                <title>{lessonData.name} | Return STEM;</title>
+                <meta charSet="UTF-8" />
+            </Head>
 
             <MobileNavBar
                 courseData={courseData}

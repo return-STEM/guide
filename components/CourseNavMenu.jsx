@@ -44,7 +44,7 @@ export default function CourseNavMenu(props) {
                                                             if (heading.level === 1) {
                                                                 return (
 
-                                                                    <Link key={heading.slug} href={`#${heading.slug}`}>
+                                                                    <Link key={heading.slug} href={`/${props.courseData.href}/${lesson.href}#${heading.slug}`}>
                                                                         <div>
                                                                             <MDXRemote {...heading.md}></MDXRemote>
                                                                         </div>
