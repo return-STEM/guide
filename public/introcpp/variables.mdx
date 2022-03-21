@@ -1,3 +1,8 @@
+---
+slides: "https://docs.google.com/presentation/d/14nO3maBt9Ws6LOgYv_j46m-5sX1jpGeIdjltqjzsyhA"
+handout: "https://docs.google.com/document/d/1VLJ1Wxg13Z7qSn5smtm8bTLEI3zZCq_Ara-J2JAd-z8"
+---
+
 # Why are variables important?
 
 In general, programs do two things: store data and they do calculations. They need a way to store data (types of data) to do their calculations, and the way they do this is with variables. 

@@ -1,3 +1,7 @@
+---
+slides: "https://docs.google.com/presentation/d/10b0oYMpkGEj7-Z35B75IZTO6IqQkKmDJWTOq4OV4fVQ"
+handout: "https://docs.google.com/document/d/121u4RvmFydfnA2z77UM_YtB5ksL3ES-RhjAe_YP0g24"
+---
 
 > This guide is still under development. We'll be overhauling the Introduction to Python content in the next few months. Stay tuned for more changes and better tutorials!
 > 
