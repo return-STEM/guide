@@ -5,7 +5,6 @@ import {COURSES_ROOT} from "../lib/mainsitemap"
 
 export default function Index() {
     return (
-
         <div>
             <Head>
                 <meta name={"viewport"}
@@ -13,6 +12,5 @@ export default function Index() {
                       <meta httpEquiv={"refresh"} content={`0;URL='${COURSES_ROOT}'`}  />
             </Head>
         </div>
-
     )
 }
