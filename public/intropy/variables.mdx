@@ -23,7 +23,8 @@ handout: "https://docs.google.com/document/d/1c3K_fsTiFbtHi8AjeuRaqzbxo6_WNG69t1
 Variables are one way Python stores information.
 
 You can think of them as containers:
-**ADD AN IMAGE HERE**
+
+![](variables/variables.png)
 
 The variable x is storing the value 4. From the point when you assign 4 to x, the program will "see" 4 whenever x is used.
 
