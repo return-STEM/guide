@@ -13,7 +13,6 @@ export default function MobileNavEscape(props) {
         escape.style.display = "none"
     }
     return (
-
             <div className={styles["nav-escape"]} id={"nav-escape"} onClick={hideNav}>
             </div>
     )
