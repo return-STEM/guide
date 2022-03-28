@@ -7,13 +7,13 @@
     {
       "name": "Variables and Data Types",
       "href": "variables"
+    },
+        {
+      "name": "Console I/O",
+      "href": "consoleio"
     }
   ],
   "wipLessons": [
-    {
-      "name": "Console I/O",
-      "href": "consoleio"
-    },
     {
       "name": "Arithmetic Operations",
       "href": "arithmetic"
