@@ -11,13 +11,13 @@
         {
       "name": "Console I/O",
       "href": "consoleio"
-    }
-  ],
-  "wipLessons": [
+    },
     {
       "name": "Arithmetic Operations",
       "href": "arithmetic"
-    },
+    }
+  ],
+  "wipLessons": [
     {
       "name": "Control Structures: Conditionals",
       "href": "conditionals"
