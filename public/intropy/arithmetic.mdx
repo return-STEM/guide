@@ -7,13 +7,18 @@ handout: "https://docs.google.com/document/d/1CCPVO6nZKoKcKfrT7gkKiq-0KTLP__Cg3K
 > 
 > ~ *The Return STEM team*
 
+Arithmetic is a fancy way of saying “math”. We use arithmetic every day!
+
+Calculating the total amount needed to pay at a restaurant, the amount of tax or tip on an item, figuring out distance from two places - these are just some of the ways in which we use math daily.
+
+Students of various ages use math daily – it’s a part of their curriculum. Such math may be easy to do without the help of a program. However, at times it can get repetitive. The math might just take a really long time to do by hand.
+
+For example, imagine that you are organizing a wedding and eventually decide that four hundred guests will attend. You need to find the total cost of the food and drinks, among others, for four hundred people. A small error in one place could ruin the entire calculation. Not only that, it would take a long time. Now obviously, you might say, why don't you use a calculator?
+
+The benefit of programming is that you can code it so that you don't even have to type all the numbers in for yourself. If the people RSVPing to a wedding did it online, you could load the data into your program and let your program do all the calculations.
 
 # Doing Math in Python
-* You can do math in Python just like you would in your math class, using symbols for basic operations:
-  * For example: `a = 5 + 3` causes `8` (5 + 3) to be assigned to the variable `a`.
-    * The symbols (5 and 3) on the sides of the operator (+) are called  __operands__
-* Basic math rules still apply!
-  * Division by zero displays an error
+You can do math in Python just like you would in your math class, using symbols for basic operations. For example: `a = 5 + 3` causes `8` (5 + 3) to be assigned to the variable `a`. The symbols (5 and 3) on the sides of the operator (+) are called  __operands__. Remember that basic math rules still apply. For example, python observes order of operations, and there are some operations that will cause errors, such as dividing a number by zero. 
 
 | Python Syntax | Operation | Math Symbol | Example | Result |
 | :-: | :-: | :-: | :-: | :-: |
@@ -24,36 +29,38 @@ handout: "https://docs.google.com/document/d/1CCPVO6nZKoKcKfrT7gkKiq-0KTLP__Cg3K
 
 ## Advanced Operators
 
-* There are other operators that may be more unfamiliar:
-  * **Integer (Floor) division** (`//`)
-    * Gives the  __whole number result__  of a division operation between two integers or floats
-      * 11 divided by 4  __is 2__  with a remainder of 3
-      * `11 // 4`  __equals 2__ * Truncates the quotient that you would get when you perform normal division with those numbers(the .75 of 11 / 4 gets removed when you do `11 // 4`)
+You have learned about the previous operations in a class before. However, Python has its own operations that may be less familiar that can be used for other purposes: 
+
+### Integer Division (`//`)
+
+Integer division, which uses the `//` operator (two slashes in a row), returns the whole number component of a division operator by two integers or floats. 
+
+For example, `11/4` evaluates to  `2` with a remainder of `3`, or `2.75`. `11/4` instead evaluates to just `2`, since the non-whole number part is left out. 
 
 ### Modulus (`%`)
-* Gives the  __remainder __ of a division operation between two integers (whole numbers) or floats
-  * 11 divided by 4 is 2 with a  __remainder of 3__
-  * `11 % 4`  __equals 3__
-* Modulus operator of the form x % y where x < y always results in x
-  * x / y will be 0 so the remainder has to be x
-  * 3 % 13  __equals 3__
+Modulus gives the  __remainder__ of a division operation between two integers (whole numbers) or floats. For example, 11 divided by 4 is 2 with a  __remainder of 3__. Therefore, `11 % 4`  __equals 3__. 
 
-10 % 3 = 1
+![](arithmetic/arithmetic1-1.png)
 
-![](arithmetic/arithmetic1.png)
+Modulus can be used for many different uses, including if a number is even or odd. 
+> When a number is odd, it always has a remainder of 1 when divided by 2. If it is even, its remainder is always 0. 
 
-* Uses for modulus
-  * Checking whether a number is even or odd
-  * Converting between different bases
-  * Check whether a number is divisible by a certain value
+A program that determines the parity of two numbers can be implemented like this: 
+
+```python
+num = int(input("Enter an integer: "))
+parity = num % 2
+print("The integer is odd: ", bool(parity))
+```
+
+This property of numbers will become more useful when you learn if-statements in the next lesson. 
 
 ### Exponent  (`**`)
-* Raises the left operand to the power of the right operand
-  * Three raised to the fifth power equals 243
-	* 35 = 243
-  * `3 ** 5` equals 243
-* **Do NOT use ^ to do exponent. ^ is a different operator and means something completely different.**
-* Cannot divide by zero with integer division either
+Exponent raises the power of the left operand to the right operand.
+Three raised to the fifth power equals 243. In other words, 
+`3 ** 5 = 3 * 3 * 3 * 3 * 3 = 243`
+
+Even though we use `^` in math or other forms of notation, __do not__ use the `^` operator in Python. It doesn't denote exponent, and instead represents the exclusive xor operator, which you learn more about [here](https://en.wikipedia.org/wiki/Exclusive_or)
 
 | Python Syntax | Operation | Math Symbol | Example | Result |
 | :-: | :-: | :-: | :-: | :-: |
@@ -62,22 +69,21 @@ handout: "https://docs.google.com/document/d/1CCPVO6nZKoKcKfrT7gkKiq-0KTLP__Cg3K
 | `**` | Exponent | Superscript | `5 ** 2` | `25` |
 
 
-## Reference: Arithmetic Operators
-For the table, a is 10 and b is 20
+## Reference Table: Arithmetic Operators
+
+In this example, `a` has the value of 10 and `b` has the value of 20. 
 
 | Symbol | Operator | Definition | Example |
 | :-: | :-: | :-: | :-: |
-| +  | Addition | Adds values on either side of the operator. | a + b = 30 |
-| -  | Subtraction | Subtracts right hand operand from left hand operand. | a – b = -10 |
-| *  | Multiplication | Multiplies values on either side of the operator | a * b = 200 |
-| / | Division | Divides left hand operand by right hand operand | b / a = 2 |
-| %  | Modulus | Divides left hand operand by right hand operand and returns remainder | b % a = 0 |
-| **  | Exponent | Performs exponential (power) calculation on operators | a ** b = 1020 |
+| `+`  | Addition | Adds values on either side of the operator. | `a + b = 30` |
+| `-`  | Subtraction | Subtracts right hand operand from left hand operand. | `a – b = -10` |
+| `*`  | Multiplication | Multiplies values on either side of the operator | `a * b = 200` |
+| `/` | Division | Divides left hand operand by right hand operand | `b / a = 2` |
+| `%`  | Modulus | Divides left hand operand by right hand operand and returns remainder | `b % a = 0` |
+| `**`  | Exponent | Performs exponential (power) calculation on operators | `a ** b = 1020` |
 
 # Rounding floats
-* When casting from a float to an int, the value does not round, it  __truncates__ the decimal is just removed without any rounding. 
-* To properly round, use the `round()` function
-  * `round(number)`
+When casting from a float to an int, the value does not round, it  __truncates__ the decimal is just removed without any rounding. Thankfully, Python has a built-in `round()` function. Put the number you want to round inside the parenthesis. 
 
 ```python
 a = int(3.8) # a is 3
@@ -91,7 +97,7 @@ b = round(3.1) #b is 3
 
 # Example: Math Machine
 
-This code asks for two numbers and prints out the result of every operation we have learned:  _[replit.com/@returnSTEM/MathMachine](https://replit.com/@returnSTEM/MathMachine)_
+This code asks for two numbers and prints out the result of every operation we have learned: [Math Machine](https://replit.com/@returnSTEM/MathMachine)
 
 ```python
 first = input("Enter your first number: ")  # Inputs the numbers to be calculated
@@ -124,62 +130,61 @@ print("Result:", first, "**", second, "=", result)  # Output Formatting
 
 # Order of Operations
 
-* Python has an order of operations similar to arithmetic:  __P E M/D A/S__
-  * Expressions are evaluated from left to right for each level of PEMDAS
-* P: Items inside  __parenthesis__ will be evaluated first
-* E:  __Exponents__  will then be evaluated
-* MD: Multiplication, division,  __modulus, integer division__  all have the same priority
-* AS: Finally, addition and subtraction is evaluated
+Python has an order of operations similar to arithmetic, which you can remember with the mneumonic __P E M/D A/S__
+Expressions are evaluated from left to right for each level of PEMDAS:
+1. P: Items inside  __parenthesis__ will be evaluated first
+2. E:  __Exponents__  will then be evaluated
+3. MD: Multiplication, division,  __modulus, integer division__  all have the same priority
+4. AS: Finally, addition and subtraction is evaluated
 ## Example
-* Evaluate `3 * 5 ** 2 + (4 + 3 - 2) // 3 % 4`
-  * Parenthesis: `(4 + 3 - 2)`
+Evaluate `3 * 5 ** 2 + (4 + 3 - 2) // 3 % 4`
+1. First, we evaluate parenthesis: `(4 + 3 - 2)`
     * Addition and subtraction is on the same level, so evaluate left to right
       * `4 + 3 = 7`, `7 - 2 = 5`
-* `3 * 5 ** 2 + 5 // 3 % 4`
-  * Exponent: `5 ** 2 = 52 = 25`
-* `3 * 25 + 5 // 3 % 4`
-  * Multiplication, division, modulus, integer division
-    * Multiplication, integer division, modulus are on the same level, so evaluate left to right
+2. `3 * 5 ** 2 + 5 // 3 % 4`
+    * Exponent: `5 ** 2 = 52 = 25`
+3. `3 * 25 + 5 // 3 % 4`
+    * Multiplication, division, modulus, integer division
+      * Multiplication, integer division, modulus are on the same level, so evaluate left to right
       * `3 * 25 = 75`
         * `75 + 5 // 3 % 4`
       * `5 // 3 = 1`
         * `75 + 1 % 4`
       * `1 % 4 = 1`
         * `75 + 1`
-* `75 + 1`
-  * Addition: `75 + 1 = 76`
-
+4. `75 + 1`
+    * Addition: `75 + 1 = 76`
 
 ## Let’s Practice
 
 Evaluate each of the python expressions:
 
-`1 + 2 * 3 / 4.0`
-`2 ** 8`
-`1000 % 365`
-`80 % 400`
-`480 % 400.0`
-`880 % 400`
-`8 * 6 - 7 ** 2`
+1. `1 + 2 * 3 / 4.0`
+2. `2 ** 8`
+3. `1000 % 365`
+4. `80 % 400`
+5. `480 % 400.0`
+6. `880 % 400`
+7. `8 * 6 - 7 ** 2`
 
 # Equation Building
 
-* You can just variables as operands, as well as in conjunction with numbers
-* Useful when writing programs where you need to:
+You can use variables as operands, as well as in conjunction with numbers (Python will just evaluate the variable as its value). This is useful when writing programs where you need to:
   * Take input from a user (the variable value will need to change)
   * Use longer numbers (using a variable called pi is much shorter than typing out  3.141592653589793 every time you want to use it)
-* Makes code more readable/understandable
-    * Using a specific name for a value is useful(especially when others read your code)
-    * Better to use a variable instead of the number each time it is used
-    * This is helps keep track of many different values when you are working with math
+
+This makes code more readable/understandable
+  * Using a specific name for a value is useful(especially when others read your code)
+  * Better to use a variable instead of the number each time it is used
+  * This is helps keep track of many different values when you are working with math
 ```python
 a = 4
 
 b = 5
 
-c = a**b  #Store the value that is
+c = a ** b  # Store the value that is
 
-#equal to 4**5 in c
+# equal to 4 ** 5 in c
 
 print(c)
 
@@ -187,10 +192,10 @@ print(c)
 ```
 
 ```python
-a = 4       #Assign 4 to a
-b = 5       #assign 5 to b
+a = 4       # Assign 4 to a
+b = 5       # Assign 5 to b
 
-c = a + b   #store the sum of a and b in c
+c = a + b   # Store the sum of a and b in c
 
 print(c)
 >>> 9
@@ -198,30 +203,40 @@ print(c)
 
 # Modules
 
-* To reduce the size of Python, it is divided into many parts that can be included as needed, called modules
-* Python has many __modules__ , portions of pre-written code that we can use in our programs
-  * These modules can save time by doing a lot of the work for us
-  * Modules can be __imported__ , or brought into our project for our use
-* Modules exist for many tasks, and can save you a lot of time when writing code
+To reduce the size of Python, some of Python's features are divided into many parts that can be included as needed, called modules. Python has many __modules__ , portions of pre-written code that we can use in our programs. Each module contains code for a specific purpose. These modules can save time by doing a lot of the work for us
+To use them, modules can be __imported__ , or brought into our project for our use.
 
+One important module is called `math`, which you can use for float operations and other functions. To import a module, we use the keyword `import`. Modules can be thought of as a subscription for an app. To use certain features you need to purchase a subscription or in this case import the module Other modules include: `datetime`(working with dates/times), `random`, etc.
 
-* One important module is called math, which you can use for float operations and other functions
-* To import a module, we use the keyword “import”
-* Modules can be thought of as a subscription for an app
-  * To use certain features you need to purchase a subscription or in this case import the module
-* Other modules include: date time(working with dates/times), random, etc.
+To use the `math` module in your programs, include the import statement at the top of the program:
+
+```python
+import math
+
+rest_of_program()
+```
+Generally, we write import statements at the top of our code. This is so that we can get all the tools we need to write the program. If you have multiple modules to import, you can write it like this:
+
+```python
+import module1
+import module2
+import module3 
+...
+import modulen
+```
 
 ## Float operations
 
-* Floats can be converted to integers by always rounding up or always rounding down
-  * Example:
-    * If you have enough batter for 4.65 cookies, you can only practically make 4 whole cookies (always round down, "floor" function)
-    * If you have to transport 10 people and each car only holds 4 people, you will need 3 cars, not 2.5 (always round up, "ceiling" function)
+Floats can be converted to integers by always rounding up or always rounding down. 
+
+For example:
+  * If you have enough batter for 4.65 cookies, you can only practically make 4 whole cookies (always round down, "floor" function)
+  * If you have to transport 10 people and each car only holds 4 people, you will need 3 cars, not 2.5 (always round up, "ceiling" function)
   * To do this, we need the  __math__  module, which can be imported using this statement at the top of your file:
-    * import math
+    * `import math`
   * From there, you can use `math.floor()` (down) and `math.ceil() (up)`
 
-```
+```python
 import math
 
 math.floor(5.9) → 5
@@ -234,6 +249,8 @@ math.ceil(8.999) → 9
 ```
 
 ## The `math` Module
+
+`math` also contains some other useful functions and variables: 
 
 * `math.sqrt(x)`
   * returns the square root of the integer/float x as a float
@@ -248,7 +265,6 @@ math.ceil(8.999) → 9
 * `math.e`
   * Evaluates to the digits of e (it's ok if you don't know this number, you'll learn it later in math class)
 * For constants in Python, don't add parentheses ()
-
 
 ```
 import math
@@ -285,13 +301,12 @@ math.e
 ```
 
 
-_[List of Math Functions in Python](https://docs.python.org/3/library/math.html)_
+[List of Math Functions in Python](https://docs.python.org/3/library/math.html)
 
 ## The `random` Module
 
-* `import random` at the top to use the module
-* The `random` module is used to generate random data
-  * An example of using it would be to generate a the value on a die
+The `random` module is used to generate random data. You can use `random` to generate random numbers, as the name implies. We use random numbers for many purposes. `random` can be used for many differnet purposes, from a simple roll of a dice to terrain generation in video games. 
+
 * `random.random()`
   * Returns a random  __float__  between 0 and 1
 * `random.uniform(x , y)`
@@ -312,13 +327,17 @@ random.uniform(1,5)
 random.randint(1,5)
 >>> 4
 ```
+Let's say you want to write a program to represent the rolling of a dice:
+```python
+import random
 
-__4. Basic Operations__
+dice = random.randint(1, 6)
+print("The value is:", dice)
+```
 
 # The `datetime` Module
 
-* `import datetime` at the top to use the module
-* The `datetime` module is used to work with dates/times
+The `datetime` module is used to work with dates/times. You can use `import datetime` at the top to use the module
 * `y=datetime.date(year, month, date)` allows you to make the variable a certain date
 * `datetime.date.today()`
   * Returns the local date in the form year-month-date
@@ -327,37 +346,36 @@ __4. Basic Operations__
   * `x.day` returns the day
   * `x.month` returns the month
   * `x.weekday()` returns the day of the week where Monday is 0 and Sunday is 6
-* You can subtract dates to find the number of days till a certain date
 
-```
+TO find the number of days until another date, you can subtract them, shown in the program below: 
+
+```python
 #Program to find days until Christmas
 
 import datetime
 
-y=datetime.date(2021,12,25)
+y = datetime.date(2021,12,25)
 
-x=datetime.date.today()
+x = datetime.date.today()
 
-print(y-x)
+print(y - x)
 ```
 
 # Compound Assignment Operators
 
 In Python, you can add two values and then assign it to the left operand
 
-This is done using the operator used, followed by a =.
+This is done using the operator used, followed by a `=`.
 
 | Using =  | Shortcut |
 | :-: | :-: |
-| a = a + b | a += b |
-| a = a - b | a -= b |
-| a = a / b | a /= b |
-| a = a // b | a //= b |
-| a = a * b | a *= b |
-| a = a % b | a %= b |
-| a = a ** b  | a **= b |
-
-__4. Basic Operations__
+| `a = a + b` | `a += b` |
+| `a = a - b` | `a -= b` |
+| `a = a / b` | `a /= b` |
+| `a = a // b` | `a //= b` |
+| `a = a * b` | `a *= b` |
+| `a = a % b` | `a %= b` |
+| `a = a ** b`  | `a **= b` |
 
 # Basic Operations Practice
 
