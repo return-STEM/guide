@@ -11,6 +11,10 @@
     {
       "name": "Defining a Class",
       "href": "defining-class"
+    },
+    {
+      "name": "Inheritance and Polymorphism",
+      "href": "inheritance-and-polymorphism"
     }
   ]
 }

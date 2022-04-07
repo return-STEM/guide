@@ -9,6 +9,7 @@ For example, if a Slice method was created in the Food class, this could be done
 
 > You have actually already used methods - remember the [string methods](/intropy/consoleio#methods) from Intro to Python?
 
+In this lesson, you will learn how to define your own classes. 
 # Syntax
 
 Remember that **classes contain variables and methods**, which determine how the class interacts with other classes.
@@ -49,7 +50,10 @@ However, `name` and `age` are defined inside the initiator, because they may var
 > Note that we can still access `species` and `common_name` from self.
 
 To define an object of a class, you must put the name of the object and set it equal to the class name followed by parentheses with the parameters. Parameters are only given if the class has an initiator with parameters, and the parameters go in the parentheses. The format is as the following:
-`Object = ClassName(parameter)`
+
+```python
+Object = ClassName(parameter)
+```
 
 For example, to define an object of the Python class above:
 
