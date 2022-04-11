@@ -1,6 +1,6 @@
 ---
-slides: "https://docs.google.com/presentation/d/1EegXHe2SiF77eNFe5DP-0iUTbbtvS0_mQAYnx86y4oo/edit?usp=sharing"
-handout: "https://docs.google.com/document/d/1HlDONvXK7qgHrTIXqg45sbt8yVWaA74wM79CQXxxcfs/edit?usp=sharing"
+slides: "https://docs.google.com/presentation/d/1EegXHe2SiF77eNFe5DP-0iUTbbtvS0_mQAYnx86y4oo"
+handout: "https://docs.google.com/document/d/1HlDONvXK7qgHrTIXqg45sbt8yVWaA74wM79CQXxxcfs"
 ---
 
 Up until now, you've learned to make **linear** C++ programs, where the program executes every line of code you write. Sometimes the program will take a break to ask for user input, but the way it runs is pretty straightforward.
