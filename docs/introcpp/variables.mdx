@@ -58,7 +58,7 @@ Integer | int | Positive or negative whole numbers (including 0) | Number of win
 Float | float | Positive or negative decimals (up to 6 or 7 decimal places)| Bank account balance | 12,345.67 
 Double  |   double |  Positive or negative decimals (up to 15 decimal places) | Bank account balance | 12,345.67 
 Character | char  | A single, number, character or symbol | Grade on your report card  | `'A'`  
-Boolean  | bool | A condition; True or False | If there is a snow day today |True 
+Boolean  | bool | A condition; True or False | If there is a snow day today |true 
 
 ## The Value
 Variables also have values, based on their data types. For example, we could store integers in int variables, but not doubles. The value of a variable can be manipulated with operations and by directly changing the value, to represent changes to data in real life. 
