@@ -15,6 +15,10 @@
     {
       "name": "Inheritance and Polymorphism",
       "href": "inheritance-and-polymorphism"
+    },
+    {
+      "name": "Algorithmic Thinking",
+      "href": "algorithmic-thinking"
     }
   ]
 }
