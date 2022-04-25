@@ -23,13 +23,13 @@
     {
       "name": "Control Structures: Loops",
       "href": "loops"
-    }
-  ],
-  "wipLessons": [
+    },
     {
       "name": "Arrays",
       "href": "arrays"
-    },
+    }
+  ],
+  "wipLessons": [
     {
       "name": "Functions",
       "href": "functions"
