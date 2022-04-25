@@ -1,6 +1,6 @@
 ---
 slides: "https://docs.google.com/presentation/d/13JYVIeWiXts5oa1_qzj7LqLdzMfISgLuhNd7W_5Ycj4"
-handout: "https://docs.google.com/document/d/1sP8bxwCR21aaJHhOZSlbTQFTXoWXbZzjujpey8XVCM0/edit?usp=sharing"
+handout: "https://docs.google.com/document/d/1sP8bxwCR21aaJHhOZSlbTQFTXoWXbZzjujpey8XVCM0"
 ---
 
 If you wanted to declare a set of related variables that are of the same type, like the cost of items 1 through 10, we would declare 10 separate int variables. Now if we wanted a 100, that would be really annoying to declare 100 separate variables. Writing `cin` for every single variable and taking the input again and again would also be annoying, and outputting them just the same. 
