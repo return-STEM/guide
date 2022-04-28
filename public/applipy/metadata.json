@@ -19,6 +19,10 @@
     {
       "name": "Algorithmic Thinking",
       "href": "algorithmic-thinking"
+    },
+    {
+      "name": "Data Structures",
+      "href": "data-structures"
     }
   ]
 }
