@@ -19,9 +19,7 @@
     {
       "name": "Control Structures: Conditionals",
       "href": "conditionals"
-    }
-  ],
-  "wipLessons": [
+    },
     {
       "name": "Control Structures: Loops",
       "href": "loops"
@@ -29,7 +27,9 @@
     {
       "name": "Arrays",
       "href": "arrays"
-    },
+    }
+  ],
+  "wipLessons": [
     {
       "name": "Functions",
       "href": "functions"
