@@ -23,6 +23,10 @@
     {
       "name": "Data Structures",
       "href": "data-structures"
+    },
+    {
+      "name": "Function Interactions",
+      "href": "function-interactions"
     }
   ]
 }
