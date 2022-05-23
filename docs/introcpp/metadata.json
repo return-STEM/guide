@@ -31,13 +31,13 @@
     {
       "name": "Functions",
       "href": "functions"
-    }
-  ],
-  "wipLessons": [
+    },
     {
       "name": "C++ Standard Library (STL)",
       "href": "cppstandardlibrary"
-    },
+    }
+  ],
+  "wipLessons": [
     {
       "name": "Debugging",
       "href": "debugging"

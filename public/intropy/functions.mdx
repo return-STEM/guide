@@ -3,11 +3,11 @@ slides: "https://docs.google.com/presentation/d/1hRbUa2lVuHWOB-xdQ3-FXdMMbnk3uqD
 handout: "https://docs.google.com/document/d/1gg2_1RsrVwDy4y1qVPLWouXkmk_UnStEnHS-IZUse7I"
 ---
 
-> This guide is still under development. We'll be overhauling the Introduction to Python content in the next few months. Stay tuned for more changes and better tutorials!
-> 
-> ~ *The Return STEM team*
+You've already used functions in the past. One of their biggest advantages is reusability - you can use functions to sort lists (`sort`), round numbers (`round`), and more. You can use it as many times as you want, and you'll never need to write your own sort function again. Furthermore, functions are useful because you don't need to know the exact algorithm something is designed in, you just need to know how to use the function. You don't need to know how to sort to use `sort`, only how to use the `sort` function. 
 
-# Prelude: style
+In this lesson, you will learn how to write your own functions.
+
+# Style
 
 The **style** of a program is how it looks. This affects the code's readability. Code should be easy to read and look good so it's easier to expand and improve in the future.
 
@@ -50,54 +50,55 @@ Most programming languages come with **style guides** that tell you how to forma
 Readable code is important for other people to know what your code does
 
 # What are functions?
-**Functions** are pieces of code that can be **called**, or asked to run, from a program
 
-You have already used many functions, such as  `print`, `input`, and `len`. These functions we have been using are actually very complex pieces of code.  
+All programs are basically just sets of instructions that process some inputs, and then return outputs back to you. Functions are like mini-programs: they receive input, do operations on them, and then output something. You have already used many functions, such as  `print`, `input`, and `len`. These functions we have been using are actually very complex pieces of code.
 
-However, since we are only interested in using them, we don't have to worry about what makes these functions work--we simply follow the guidelines on how to use them.
-
-This is what makes functions so powerful--we can perform complex actions without worrying about the details. 
-
-Similarly, these can help make code more organized and better stylistically
-In this lesson, you will learn how to write your own functions
-
-# Abstraction
-- **Abstraction** is an important concept when talking about functions
-  - **Abstraction** involves hiding away unnecessary details and "inner workings"
-- This concept of **abstraction** is explored all over the real world in products we own
-  - You probably have a microwave in your kitchen
-    - You **need to** **know** that to cook food, you enter the time/power and press start
-    - You **do not need to know** how the microwave takes power from the wall and cooks your food with it
-    - We can say that the **details** of how the microwave works have been **abstracted away** from the user
-- Functions follow the concept of abstraction as well
-  - Details of how the function works have been **abstracted away**
-    - You only need to know how to use the function, not how it works
-
-# Declaring functions
-
-Functions can be **declared** in Python using the `def` keyword. This keyword lets Python know that:
-- You are declaring a function (`def`)
-- Your function's name is `my_function`
-- Your function will have no parameters (the parenthesis have nothing in them)
-  This line of code is called the **function signature**
+You can define a function like this: 
 
 ```python
-def my_function():
+def function_name(parameter1, parameter2, parameter3):
 ```
+If the function takes no parameters, there will be nothing in the parenthesis. It's necessary that you specify the name of the function, since you'll need it to call the function later to use. 
 
-## Practice: Which function is declared correctly?
-
+<details>
+<summary> 
+Practice: Which function is declared correctly?
+	
 1. `def add two numbers():`
 2. `def add_two_numbers():`
 3. `def add_two_numbers:`
 4. `def add_two_numbers()`
+	
+</summary>
+Answer: 2 is declared correctly. (1) has spaces between each word of the name, which is not allowed. (3) has no parenthesis. You must include parenthesis for the function, even if there are no parameters. (4) has no colon. 
+</details>
+
+Let's write a simple function that adds two numbers:
+```python
+def add_two_nums(a, b):
+    sum = a + b
+    return sum
+```
+
+The `def` keyword defines the functions. `add_two_nums` has two parameters, a and b. When the function is run, a and b will be specified based on order, so the function knows which one is which. The `return` keyword specifies what the function should give back to us (return to us). 
+
+For example,
+```
+print(add_two_nums(4, 5))
+```
+Displays 9 on the screen, since 4 + 5 = 9. 
+However, you won't always need to define a variable like `sum` to return. Instead, you can also put expressions in your `return` statement:
+
+```python
+def add_two_nums(a, b):
+    return a + b
+```
+Which shortens the process. 
 
 ## Naming Functions
 
-Function names follow the same rules as variable names--name them according to what they do. 
-> Function names are often verbs, since they perform actions. Variable names are nouns because they represent things (data).
+Just like variables, functions should be named according to their purpose. A function that finds the prime numbers in a list might be called `find_primes`. Remember to keep your function names reasonably short. They should make sense to use. Additionally, you should follow the same naming conventions as variables.
 
-### Practice: Naming Functions
 Come up with names for the functions below:
 
 1. A function, which, given a number, finds whether the number is prime or not
@@ -110,19 +111,13 @@ Come up with names for the functions below:
 
 After declaring the function, you can write any code that will be run when the function is **called**. All code inside a function should be indented--this signifies that the code is inside the function, just like with `if` blocks.
 
-Now you can run the code inside the function by **calling it.** To call a function, put its name followed by a set of parenthesis.
-
-```python
-def my_function():
-    print("I am inside my_function")
-```
-
-When you call a function, Python will jump to where the function is defined and execute the code that is part of the function
+Now you can run the code inside the function by **calling it.** To call a function, put its name followed by a set of parenthesis. When you call a function, Python will jump to where the function is defined and execute the code that is part of the function
 
 ```python
 def my_function():
     print("I am inside my_function")
 my_function()
+
 >>> I am inside my_function
 ```
 
@@ -159,6 +154,15 @@ Functions can also have **parameters** (input for the function). When you give t
 ```python
 def count_to_n_by_m(n, m):
 	# We can use n and m as parameters inside our function
+```
+
+> Parameters are like placeholders for the values that you will pass to the function, while arguments are the values actually passed to the function.
+
+```python
+def add_two_nums(a, b): # Parameters
+    return a + b
+
+add_two_nums(4, 5) # Arguments
 ```
 
 Python differentiates the arguments you give it by the order. The first value you give it will be `n` and the second value you give it will be `m`:
@@ -205,7 +209,7 @@ greet_me("Sam", greeting = "Hello") # times still defaults to 1
 >>> Hello, Sam!
 ```
 
-Always put arguments which are positional in front of those which are non-positional (optional) arguments
+Always put arguments which are positional in front of those which are non-positional (optional) arguments:
 
 ```python
 greet_me("Sam", greeting = "Hello", times = 2) # This will work
@@ -260,7 +264,7 @@ print(num)
 
 ## Pass by Reference
 
-Non-primitive data types (everything else) are **passed by reference**. This means that the function receives a reference to the data we pass in. If we change (mutate) the argument, those changes **will affect** the original variable
+Non-primitive data types (everything else, like lists) are **passed by reference**. This means that the function receives a reference to the data we pass in. If we change (mutate) the argument, those changes **will affect** the original variable.
 
 ```python
 # Pass by Reference - Mutating
@@ -285,6 +289,7 @@ print(my_val)
 ```
 
 ## An analogy
+
 Imagine that you're working on an essay with your friend. You already wrote some of it, and you want to give it to your friend for him to work on it.
 
 I can give him a copy of my essay (pass by value). However, I wouldn't see any of the changes he makes unless he gives his edited copy back to me.
@@ -392,7 +397,7 @@ fac(1) = 1          # Base case evaluates to 1
 # Practical Application: Date Converter
 The following function returns the index that corresponds with the day of the week.
 
-> This example uses a dictionary, a data structure you haven't learned yet. It looks up the number based on the key (`"Sun"`, `"Mon"`, etc.)
+> This example uses a dictionary, a data structure you haven't learned yet. It looks up the number based on the key (`"Sun"`, `"Mon"`, etc.), instead of a number (like lists do). 
 
 
 ```python
